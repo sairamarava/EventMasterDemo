@@ -1,12 +1,24 @@
 {
-  "name": "eventmaster-e8f4ee15cfd8b382de749547d4b9f4078c1200c7",
+  "name": "eventmaster",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Event Management System",
+  "main": "backend/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "cd frontend && npm install && npm run build",
+    "start": "node backend/server.js",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\"",
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install"
   },
-  "keywords": [],
+  "keywords": [
+    "event",
+    "management",
+    "react",
+    "node",
+    "express"
+  ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
 }

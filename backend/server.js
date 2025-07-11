@@ -24,11 +24,21 @@ app.use(cors());
 app.use(express.json());
 
 // Serve static files from uploads directory
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.use("/api/events", eventRoutes);
 app.use("/api/auth", authRoutes);
 
-app.listen(process.env.PORT, () =>
-  console.log(`Server running on port ${process.env.PORT}`)
-);
+// Health check endpoint
+app.get("/api/health", (req, res) => {
+  res.json({ message: "Server is running!" });
+});
+
+// Export the app for Vercel
+export default app;
+
+// Only start the server if this file is run directly (not imported)
+if (process.env.NODE_ENV !== "production") {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+}
