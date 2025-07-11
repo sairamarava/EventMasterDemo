@@ -1,0 +1,12 @@
+{
+  "name": "eventmaster-e8f4ee15cfd8b382de749547d4b9f4078c1200c7",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

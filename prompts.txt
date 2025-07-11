@@ -1,0 +1,1 @@
+Now make the frontend look 300 dollar webiste by adding unique styles of fonts minimalist along and glowy background. Add smooth animations along with neat alignment over everything. use the ui/ux design for refrence . Use the color pallete given for the styling, 

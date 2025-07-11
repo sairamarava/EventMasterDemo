@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Inter", system-ui, sans-serif;
+    background: linear-gradient(
+      135deg,
+      #f8fafc 0%,
+      #f1f5f9 30%,
+      #e2e8f0 70%,
+      #cbd5e1 100%
+    );
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: #111827;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(
+        circle at 20% 25%,
+        rgba(59, 130, 246, 0.08) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 80% 75%,
+        rgba(147, 51, 234, 0.06) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 60% 40%,
+        rgba(16, 185, 129, 0.04) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 30% 80%,
+        rgba(249, 115, 22, 0.03) 0%,
+        transparent 40%
+      );
+    pointer-events: none;
+    z-index: -2;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        45deg,
+        rgba(59, 130, 246, 0.02) 25%,
+        transparent 25%
+      ),
+      linear-gradient(-45deg, rgba(59, 130, 246, 0.02) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(147, 51, 234, 0.02) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(147, 51, 234, 0.02) 75%);
+    background-size: 60px 60px;
+    background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+@layer components {
+  .btn-minimal {
+    @apply bg-primary text-white font-medium py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors duration-200 border-none shadow-sm hover:shadow-md;
+  }
+
+  .card-minimal {
+    @apply bg-white/70 backdrop-blur-sm rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 border border-gray-100/50 overflow-hidden;
+  }
+
+  .card-enhanced {
+    @apply bg-white/80 backdrop-blur-md rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200/50 overflow-hidden;
+  }
+
+  .badge-minimal {
+    @apply bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-status {
+    @apply px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-upcoming {
+    @apply bg-blue-50 text-blue-700;
+  }
+
+  .badge-ongoing {
+    @apply bg-green-50 text-green-700;
+  }
+
+  .badge-completed {
+    @apply bg-gray-50 text-gray-600;
+  }
+
+  .input-minimal {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-200 bg-white text-gray-900 placeholder-gray-500 shadow-sm;
+  }
+
+  .input-minimal:focus {
+    @apply border-primary ring-2 ring-primary/20 shadow-md;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .header-minimal {
+    @apply bg-white/90 backdrop-blur-md border-b border-gray-200/50 shadow-sm;
+  }
+
+  .hero-minimal {
+    @apply bg-gradient-to-br from-white/50 via-blue-50/30 to-purple-50/30 backdrop-blur-sm;
+  }
+
+  .modal-card {
+    @apply bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl border border-gray-200/50;
+  }
+
+  .glass-card {
+    @apply bg-white/60 backdrop-blur-md rounded-xl shadow-lg border border-gray-200/30;
+  }
+
+  .pattern-dots {
+    background-image: radial-gradient(
+      circle,
+      rgba(59, 130, 246, 0.1) 1px,
+      transparent 1px
+    );
+    background-size: 20px 20px;
+  }
+
+  .pattern-grid {
+    background-image: linear-gradient(
+        rgba(59, 130, 246, 0.05) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .floating-card {
+    @apply bg-white/70 backdrop-blur-lg rounded-2xl shadow-xl border border-gray-200/40;
+    background-image: radial-gradient(
+        circle at 20% 20%,
+        rgba(59, 130, 246, 0.03) 0%,
+        transparent 70%
+      ),
+      radial-gradient(
+        circle at 80% 80%,
+        rgba(147, 51, 234, 0.02) 0%,
+        transparent 70%
+      );
+  }
+
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(243, 244, 246, 0.8) 20%,
+      rgba(249, 250, 251, 0.7) 40%,
+      rgba(255, 255, 255, 0.8) 60%,
+      rgba(243, 244, 246, 0.9) 80%,
+      rgba(255, 255, 255, 0.95) 100%
+    );
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .glow-card {
+    @apply bg-white/80 backdrop-blur-lg rounded-xl shadow-xl border border-gray-200/50;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+
+  .glow-card:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15),
+      0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(59, 130, 246, 0.1);
+  }
+
+  .form-input {
+    @apply w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary focus:outline-none focus:ring-0 transition-all duration-200 bg-white text-gray-900 placeholder-gray-400 font-medium;
+  }
+
+  .form-input:focus {
+    @apply border-primary shadow-lg;
+  }
+
+  .form-input:hover {
+    @apply border-gray-400;
+  }
+
+  .form-select {
+    @apply w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary focus:outline-none focus:ring-0 transition-all duration-200 bg-white text-gray-900 font-medium cursor-pointer;
+  }
+
+  .form-select:focus {
+    @apply border-primary shadow-lg;
+  }
+
+  .form-select:hover {
+    @apply border-gray-400;
+  }
+
+  .form-textarea {
+    @apply w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary focus:outline-none focus:ring-0 transition-all duration-200 bg-white text-gray-900 placeholder-gray-400 font-medium resize-none;
+  }
+
+  .form-textarea:focus {
+    @apply border-primary shadow-lg;
+  }
+
+  .form-textarea:hover {
+    @apply border-gray-400;
+  }
+}
+
+@layer utilities {
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+
+  .bg-mesh {
+    background-image: linear-gradient(
+        45deg,
+        rgba(59, 130, 246, 0.05) 25%,
+        transparent 25%
+      ),
+      linear-gradient(-45deg, rgba(59, 130, 246, 0.05) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(147, 51, 234, 0.05) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(147, 51, 234, 0.05) 75%);
+    background-size: 30px 30px;
+    background-position: 0 0, 0 15px, 15px -15px, -15px 0px;
+  }
+}
