@@ -19,6 +19,10 @@
       "dest": "/api/index.js"
     },
     {
+      "src": "/(.*\\..+)",
+      "dest": "/frontend/dist/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/frontend/dist/index.html"
     }
