@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({ 
   plugins: [react()], 
-  base: '/my-vite-react-app/', // Adjust based on your deployment needs 
+  base: '/', // Set to root path for Vercel deployment
 }); 

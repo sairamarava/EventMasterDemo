@@ -31,7 +31,11 @@ app.use("/api/auth", authRoutes);
 
 // Health check endpoint
 app.get("/api/health", (req, res) => {
-  res.json({ message: "Server is running!" });
+  res.json({ 
+    message: "Server is running!", 
+    timestamp: new Date().toISOString(),
+    version: "1.0.1"
+  });
 });
 
 // Export the app for Vercel
