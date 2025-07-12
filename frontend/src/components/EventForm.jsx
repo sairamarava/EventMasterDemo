@@ -43,9 +43,7 @@ export default function EventForm({
 
       // Set image preview if event has an image
       if (editingEvent.image) {
-        setImagePreview(
-          `${API_BASE_URL}/events/${editingEvent._id}/image`
-        );
+        setImagePreview(`${API_BASE_URL}/events/${editingEvent._id}/image`);
       } else {
         setImagePreview(null);
       }

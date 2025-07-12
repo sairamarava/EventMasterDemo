@@ -227,7 +227,8 @@ export default function Home() {
                     setSearchTerm("");
                     setFilterCategory("all");
                   }}
-                  className="btn-energetic font-extrabold text-red-600 bg-zinc-100 rounded-md p-2"                >
+                  className="btn-energetic font-extrabold text-red-600 bg-zinc-100 rounded-md p-2"
+                >
                   Clear Filters 🗂️
                 </button>
               )}

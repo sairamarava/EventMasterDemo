@@ -1,13 +1,13 @@
-import { createContext, useContext, useState, useEffect } from 'react';
-import axios from 'axios';
-import API_BASE_URL from '../config/api';
+import { createContext, useContext, useState, useEffect } from "react";
+import axios from "axios";
+import API_BASE_URL from "../config/api";
 
 const AuthContext = createContext();
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {
-    throw new Error('useAuth must be used within an AuthProvider');
+    throw new Error("useAuth must be used within an AuthProvider");
   }
   return context;
 };
@@ -23,15 +23,18 @@ export const AuthProvider = ({ children }) => {
         username,
         password,
       });
-      
+
       if (response.data.success) {
         setIsAuthenticated(true);
-        localStorage.setItem('isAuthenticated', 'true');
+        localStorage.setItem("isAuthenticated", "true");
         return { success: true };
       }
-      return { success: false, message: 'Invalid credentials' };
+      return { success: false, message: "Invalid credentials" };
     } catch (error) {
-      return { success: false, message: error.response?.data?.message || 'Login failed' };
+      return {
+        success: false,
+        message: error.response?.data?.message || "Login failed",
+      };
     } finally {
       setLoading(false);
     }
@@ -39,12 +42,12 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     setIsAuthenticated(false);
-    localStorage.removeItem('isAuthenticated');
+    localStorage.removeItem("isAuthenticated");
   };
 
   useEffect(() => {
-    const authStatus = localStorage.getItem('isAuthenticated');
-    if (authStatus === 'true') {
+    const authStatus = localStorage.getItem("isAuthenticated");
+    if (authStatus === "true") {
       setIsAuthenticated(true);
     }
   }, []);
@@ -56,9 +59,5 @@ export const AuthProvider = ({ children }) => {
     loading,
   };
 
-  return (
-    <AuthContext.Provider value={value}>
-      {children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
