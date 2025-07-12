@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import API_BASE_URL from "../config/api";
 import {
   FaCalendarPlus,
   FaCheck,
@@ -43,7 +44,7 @@ export default function EventForm({
       // Set image preview if event has an image
       if (editingEvent.image) {
         setImagePreview(
-          `http://localhost:5000/api/events/${editingEvent._id}/image`
+          `${API_BASE_URL}/events/${editingEvent._id}/image`
         );
       } else {
         setImagePreview(null);
@@ -183,8 +184,8 @@ export default function EventForm({
       }
 
       const url = editingEvent
-        ? `http://localhost:5000/api/events/${editingEvent._id}`
-        : "http://localhost:5000/api/events";
+        ? `${API_BASE_URL}/events/${editingEvent._id}`
+        : `${API_BASE_URL}/events`;
 
       const method = editingEvent ? "PUT" : "POST";
 

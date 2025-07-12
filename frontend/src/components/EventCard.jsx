@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FaCalendarAlt, FaStar, FaMapMarkerAlt, FaUsers } from "react-icons/fa";
+import API_BASE_URL from "../config/api";
 
 export default function EventCard({ event, index }) {
   const formatDate = (dateString) => {
@@ -45,7 +46,7 @@ export default function EventCard({ event, index }) {
   };
 
   const imageUrl = event.image
-    ? `http://localhost:5000/api/events/${event._id}/image`
+    ? `${API_BASE_URL}/events/${event._id}/image`
     : null;
 
   return (
