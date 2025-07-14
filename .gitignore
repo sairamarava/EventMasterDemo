@@ -62,3 +62,5 @@ Desktop.ini
 
 # Vite cache
 .vite/
+# Local Netlify folder
+.netlify
