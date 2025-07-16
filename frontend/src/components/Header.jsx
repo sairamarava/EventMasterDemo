@@ -205,7 +205,6 @@ function LoginModal({ isOpen, onClose }) {
           <div className="inline-flex items-center gap-2 bg-gray-50 px-4 py-2 rounded-lg">
             <FaStar className="text-primary" />
             <span className="text-xs text-gray-600 font-medium">
-              Demo: admin / admin123
             </span>
           </div>
         </div>
