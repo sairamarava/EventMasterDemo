@@ -16,12 +16,6 @@
 
 ---
 
-## 🖼️ System Design
-
-![System Design](./Frame%201.png)
-
----
-
 ## 🧰 Tech Stack
 
 | Layer       | Technology                |
@@ -55,3 +49,4 @@ npm install
 # Go to the frontend folder
 cd ../frontend
 npm install
+
