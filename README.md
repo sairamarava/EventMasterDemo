@@ -36,17 +36,4 @@
 - MongoDB
 - npm or yarn
 
-### 🔧 Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/sairamarava/EventMasterDemo.git
-
-# Go to the backend folder
-cd backend
-npm install
-
-# Go to the frontend folder
-cd ../frontend
-npm install
 
